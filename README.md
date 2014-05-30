@@ -1,0 +1,4 @@
+GoDI
+====
+
+Golang dependency injection
