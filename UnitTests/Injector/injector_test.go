@@ -32,9 +32,9 @@ func Test_Injector(t *testing.T) {
   c := Cat{"MEOW"}
   cnt.Register(d)
   cnt.Register(c)
-  s := cnt.BindToInterface(new(Animal), "Dog")
-  r := cnt.BindToInterface(new(Animal), "Cat")
-  if s.(Animal).Speak() != "WOOF" && r.(Animal).Speak() != "MEOW" {
+  s := cnt.BindToInterface(new(Animal), "Dog").(Animal)
+  r := cnt.BindToInterface(new(Animal), "Cat").(Animal)
+  if s.Speak() != "WOOF" && r.Speak() != "MEOW" {
     t.Errorf("Injector did not produce right result")
   }
 }
